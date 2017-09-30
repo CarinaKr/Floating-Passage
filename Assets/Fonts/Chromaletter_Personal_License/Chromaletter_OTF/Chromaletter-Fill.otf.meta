@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 4250a002dd97ac44c929abbdd438c122
+timeCreated: 1506741392
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Chromaletter
+  fontNames:
+  - Chromaletter
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

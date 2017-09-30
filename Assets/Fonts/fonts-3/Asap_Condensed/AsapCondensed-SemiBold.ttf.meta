@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 20e02b4a3987ae04f878088f24d83faa
+timeCreated: 1506741391
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Asap Condensed
+  fontNames:
+  - Asap Condensed
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1e092ad1f7cfa814f8f11a55e4aa2b40, type: 3}
+  - {fileID: 12800000, guid: 13d475699c2fa5d4489a031a7cfa3f03, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

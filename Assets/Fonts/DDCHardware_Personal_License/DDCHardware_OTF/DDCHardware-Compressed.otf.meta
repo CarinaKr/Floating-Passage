@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b67d9c561c0764f49a38edeef56c50cb
+timeCreated: 1506741397
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DDC Hardware
+  fontNames:
+  - DDC Hardware
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7e5d15aef52c449489d930d06de6b165, type: 3}
+  - {fileID: 12800000, guid: 429404efb593e414f81e3cdbfc9f2f89, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

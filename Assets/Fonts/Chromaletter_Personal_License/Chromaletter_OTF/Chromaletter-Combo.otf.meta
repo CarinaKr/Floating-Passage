@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: ef80a6a839b4f46408b237f3af03842c
+timeCreated: 1506741398
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Chromaletter
+  fontNames:
+  - Chromaletter
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4250a002dd97ac44c929abbdd438c122, type: 3}
+  - {fileID: 12800000, guid: 7942e3922a6b238448f49ae26116b1b1, type: 3}
+  - {fileID: 12800000, guid: bd4d37eb0ea78d04cab529b759e85de1, type: 3}
+  - {fileID: 12800000, guid: e2d5ff0c297e85a4088f436c48874907, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
