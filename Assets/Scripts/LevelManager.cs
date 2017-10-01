@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
 
-    public Text infoText;
+    public Text infoText,countdownText;
     public Image infoTextImage;
     public Text pointsText;
     public GameObject player;
@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour {
 
     private bool _isPlaying;
     private int _currentPoints;
-    private int _currentWay=3;
+    private int _currentWay=1;
     private List<StoneMovement>[] _leftRight, _upDown, _turning;
     private List<GameObject>[] _time;
     private int _countdown;
@@ -173,20 +173,21 @@ public class LevelManager : MonoBehaviour {
     {
         playerMovement.animator.SetBool("isJumping", true);
         _coroutineIsRunning = true;
+        infoText.enabled = false;
         infoTextImage.enabled = false;
-        infoText.fontSize *= 2;
+        countdownText.enabled = true;
         while (true)
         {
-            infoText.text = "" + _countdown;
+            countdownText.text = "" + _countdown;
             yield return new WaitForSeconds(1);
             _countdown--;
             if (_countdown < 0)
             {
                 _countdown = countdownTime;
                 isPlaying = true;
-                infoText.fontSize /= 2;
                 _coroutineIsRunning = false;
                 playerMovement.animator.SetBool("isJumping", false);
+                countdownText.enabled = false;
                 StopCoroutine("Countdown");
             }
         }

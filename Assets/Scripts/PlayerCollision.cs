@@ -7,14 +7,25 @@ public class PlayerCollision : MonoBehaviour {
     
     public LevelManager levelManager;
     public Text infoText;
+    public AudioSource audioSource;
+    public AudioClip[] audioClips;
 
     private int _pointsPerBlock = 5;
     private string _standingOn;
+
+    void Update()
+    {
+        
+    }
 
 	void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Time")
         {
+            audioSource.clip = audioClips[1];
+            audioSource.volume = 0.5f;
+            audioSource.Play();
+            audioSource.volume = 1f;
             GetComponent<PlayerMovement>().timeLeft += other.GetComponent<ExtraTime>().extraTime;
             other.gameObject.SetActive(false);
         }
@@ -22,6 +33,13 @@ public class PlayerCollision : MonoBehaviour {
         {
             levelManager.reachCheckpoint(other.GetComponent<ExtraTime>().checkpointNumber);
         }
+        if (other.transform.tag=="Floor")
+        {
+            audioSource.clip = audioClips[0];
+            audioSource.Play();
+            StartCoroutine("StopPlaying");
+        }
+
     }
 
     void OnTriggerStay(Collider other)
@@ -40,16 +58,12 @@ public class PlayerCollision : MonoBehaviour {
         {
             transform.parent = null;
         }
-
-
     }
 
-    void OnCollisionEnter(Collision other)
+    IEnumerator StopPlaying()
     {
-        if(other.transform.tag=="Floor")
-        {
-            infoText.text = "You have no way out! \n Press Move to Respawn.";
-            levelManager.isPlaying = false;
-        }
+        yield return new WaitForSeconds(0.5f);
+        infoText.text = "You fall into the void! \n Press Move to Respawn.";
+        levelManager.isPlaying = false;
     }
 }

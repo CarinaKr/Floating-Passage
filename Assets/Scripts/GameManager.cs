@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Awake () {
         DontDestroyOnLoad(gameObject);
+        PlayerPrefs.DeleteAll();
         for(int i=0;i<_wayNum;i++)
         {
             if(PlayerPrefs.HasKey("Way"+i))
