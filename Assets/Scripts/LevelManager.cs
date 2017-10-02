@@ -21,18 +21,20 @@ public class LevelManager : MonoBehaviour {
 
     private bool _isPlaying;
     private int _currentPoints;
-    private int _currentWay=1;
+    private int _currentWay=2;
     private List<StoneMovement>[] _leftRight, _upDown, _turning;
     private List<GameObject>[] _time;
     private int _countdown;
     private IEnumerator _coroutine;
     private bool _coroutineIsRunning;
     private int[] _bestWayTimes;
+    private Rigidbody playerRB;
 
 
     // Use this for initialization
     void Start () {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        playerRB = player.GetComponent<Rigidbody>();
         _coroutine = Countdown();
         _countdown = countdownTime;
         _leftRight = new List<StoneMovement>[waypoints.Length-1];
@@ -97,6 +99,7 @@ public class LevelManager : MonoBehaviour {
     {
         player.transform.position = waypoints[_currentWay-1].transform.position;
         player.transform.rotation = waypoints[_currentWay-1].transform.rotation;
+        playerRB.velocity = new Vector3(0, 0, 0);
         mainCamera.transform.position = cameraViews[_currentWay-1].position;
         mainCamera.transform.rotation = cameraViews[_currentWay-1].rotation;
         playerMovement.timeLeft = waypoints[_currentWay-1].extraTime;
@@ -181,6 +184,10 @@ public class LevelManager : MonoBehaviour {
             countdownText.text = "" + _countdown;
             yield return new WaitForSeconds(1);
             _countdown--;
+            if(_countdown==0)
+            {
+                playerMovement.animator.SetBool("isJumping", false);
+            }
             if (_countdown < 0)
             {
                 _countdown = countdownTime;

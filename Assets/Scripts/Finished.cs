@@ -19,13 +19,13 @@ public class Finished : MonoBehaviour {
         bestTime.text = "";
         for(int i=0;i<_wayTimes.Length;i++)
         {
-            myTime.text += "Way " + i+1 + ": " + _wayTimes[i]+"\n";
-            if(_bestWayTimes[i]>PlayerPrefs.GetInt("Way"+i))
-            {
-                bestTime.color = Color.yellow;
-            }
-            bestTime.text += "Way " + i+1 + ": " + _bestWayTimes[i] + "\n";
-            bestTime.color = Color.black;
+            myTime.text += "Way " + (i+1) + ": " + _wayTimes[i]+"\n";
+            //if(_bestWayTimes[i]>PlayerPrefs.GetInt("Way"+i))
+            //{
+            //    bestTime.color = Color.yellow;
+            //}
+            bestTime.text += "Way " + (i+1) + ": " + _bestWayTimes[i] + "\n";
+            //bestTime.color = Color.black;
         }
 
 	}

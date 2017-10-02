@@ -13,10 +13,15 @@ public class PlayerCollision : MonoBehaviour {
     private int _pointsPerBlock = 5;
     private string _standingOn;
 
-    void Update()
-    {
-        
-    }
+    //void Update()
+    //{
+    //    if(transform.position.y<-100)
+    //    {
+    //        audioSource.clip = audioClips[0];
+    //        audioSource.Play();
+    //        StartCoroutine("StopPlaying");
+    //    }
+    //}
 
 	void OnTriggerEnter(Collider other)
     {
