@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour {
     public Transform[] ways;
     public StoneMovement w14Crossover;
     public int countdownTime;
+    public AudioSource audio;
 
     private bool _isPlaying;
     private int _currentPoints;
@@ -90,6 +91,7 @@ public class LevelManager : MonoBehaviour {
     {
         if (pNumber == _currentWay)
         {
+            audio.Play();
             isPlaying = false;
             nextWay();
         }
@@ -147,8 +149,11 @@ public class LevelManager : MonoBehaviour {
             {
                 playerMovement.enabled = false;
                 movingStones.enabled = false;
-                infoText.enabled = true;
-                infoTextImage.enabled = true;
+                if (_currentWay < waypoints.Length - 1)
+                {
+                    infoText.enabled = true;
+                    infoTextImage.enabled = true;
+                }
             }
             else
             {
