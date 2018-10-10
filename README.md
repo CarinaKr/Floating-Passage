@@ -7,7 +7,7 @@ To play Floating Passage with a keyboard, buttons are mapped as follows:
 Move -> a
 
 Blue left -> s
-fdas
+
 Blue right -> j
 
 Red up -> d
